@@ -1,0 +1,3 @@
+is_global = true
+build_property.RootNamespace = Utilities.DatabaseCheck
+build_property.ProjectDir = c:\repo\docker4.net\src\Utilities.DatabaseCheck\
