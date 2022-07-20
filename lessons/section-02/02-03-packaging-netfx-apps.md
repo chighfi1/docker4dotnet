@@ -113,6 +113,8 @@ The v3 image will only run the NuGet restore if any of the project references ha
 
 You can edit a source file and the app will be compiled again, but the references come from the build cache.
 
+>> Um, what does this mean?
+
 ```
 Add-Content -Value "" -Path src\SignUp.Web\Web.config
 

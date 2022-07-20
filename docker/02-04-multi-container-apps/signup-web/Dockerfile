@@ -1,4 +1,5 @@
 # escape=`
+# Extension of v3 verion
 FROM mcr.microsoft.com/dotnet/framework/sdk:4.8 AS builder
 
 WORKDIR C:\src
@@ -24,5 +25,9 @@ ENV APP_ROOT=C:\web-app
 WORKDIR ${APP_ROOT}
 RUN New-WebApplication -Name 'app' -Site 'Default Web Site' -PhysicalPath $env:APP_ROOT
 
+# Copy from builder stage everything that was published
+# **that includes the connection strings config file from the source folder
 COPY --from=builder C:\out\_PublishedWebsites\SignUp.Web ${APP_ROOT} 
+# Copying in connection string's config file
+# **Here we are copying in an *alternative* connection's config file
 COPY docker\02-04-multi-container-apps\signup-web\connectionStrings.config ${APP_ROOT}
