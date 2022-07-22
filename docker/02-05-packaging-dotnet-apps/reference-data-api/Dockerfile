@@ -1,3 +1,5 @@
+#This one is confusing as F
+
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1 as builder
 #Source files that contain all my dependencies in application I'm using
 WORKDIR /src
